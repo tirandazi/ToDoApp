@@ -1,18 +1,23 @@
 CHECKPOINT 1: PROJECT STRUCTURE
     a. Find out where the HTML file is located.
         - The HTML file is located in the public/ directory
+
     b. What does the code inside index.js file do?
         - It takes the html element with the id 'root' and creates a root element in the react dom to render the html page through react.
+
     c. What is this <App /> inside the index.js  file? 
         - <App /> is a component in react which is basically reusable UI elements. 
         - It will contain many ui elements within it.
+
     d. Is the App() function returning an HTML tag?
         - The App() function returns a JSX element. JSX element can contain single or multiple html elements all enclosed within single root tag.
         - JSX elements provide a way to write javascript code inside html.
+
     e. How is the  App() function invoked/called/executed?
         - React takes the ui elements of the App component and creates a virtual dom tree
         - The elements of this dom are mapped according to the actual dom.
         - The final ui element is then rendered.
+
 
 CHECKPOINT 2: CREATING A SIMPLE COMPONENT
     a. How is the <Header/> component created and used inside App()? Can you create and put a <SubHeader/> which is of a slightly smaller font than the header, right below the <Header/>?
@@ -21,17 +26,43 @@ CHECKPOINT 2: CREATING A SIMPLE COMPONENT
         - Specifies export default to mention the main method of the module.
         - The Header function is imported from the Header module inside the App.js file.
         - The Header function is called as a self-enclosing tag where it needs to be rendered.
+
     b. In App.js why is the <Count/> component able to receive data as an attribute and the <Header/> component can’t?
         - The <Count /> component is defined to use a prop as a function parameter so that a value can be passed to it.
         - Header component is not defined to receive any props from its parent component.
+
     c. Why does the Count() function’s definition have {} in parameters?
         - The {} in the parameters is to destructure the props and get the exact named prop as input.
         - When multiple props are passed, the props can be destructured to maintain same prop name in both parent and child components.
+
     d. Should the components always be used with a self-closing tag?
         - React components need not always be used with self-closing tag.
         - React componets can have both opening and closing tags.
         - For componets which need to render child components, opening and closing tags can be used.
         - In case a component does not need to render any child ui elemtns within it, self closing tag can be used.
+
     e. What happens if a component which is expecting a parameter is not passed a value? What happens if extra unanticipated values are passed instead?
-        - React still renders the compoents if prop is not passed to the component replacing the prop with a empty string placeholder.
+        - React still renders the compoents if prop is not passed to the component replacing the prop with undefined placeholder.
         - On the other hand, being passed an extra unanticipated values does not stop the render and continues without error.
+
+
+CHECKPOINT 3: LOOPS AND CONDITIONALS IN COMPONENTS
+    a. Take a look at App() function definition. How are we able to execute a JS code inside <div> tags (i.e. calling the map method on the countList)? Is there any JS code inside <div> tags in the Count() function as well?
+        Inside the JSX elements, we can include javascript expressions inside {} brackets.
+        {} help us to include content dynamically.
+        Yes, Count component also has javascript code, contains conditional operator and expression.
+
+    b. In App.js, this line: <Count label="" data="" /> shows we can pass attributes to the tags. Do you think label and data are reserved keywords, or are they just random variable names?
+        label and data are random variable names. 
+
+    c. Why is the <Count label="" data="" /> in App.js working fine with and without label attribute? How is it getting a default label value when nothing is passed?
+        When the props are empty, the default value would be undefined which is ignored in react. 
+        conditional operator has been used to check for props and reassign accordingly.
+        So, if a props is used in a feature which it might be affected with empty props, the cases need to be handled explicitly.
+
+    d. Copy the URL from the output window (of sandbox) and open it in your browser (chrome preferably). Open dev-tools (F12) and look for any warning in the console. Can you fix the warning by changing something in the code playground? [Hint : Take a look at the link shared with the warning in the browser console]
+        if render a list of items from an array, each element needs to be uniquely mapped with the corresponding dom element and hance needs to be passed a key prop which is unique.
+
+    e. The dev-tools of the browser can also be used to inspect the elements of a page. Can you inspect HTML elements of your page?
+        Obviously yes
+
