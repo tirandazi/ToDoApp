@@ -1,0 +1,16 @@
+CHECKPOINT 1
+    a. Find out where the HTML file is located.
+        The HTML file is located in the public/ directory
+    b. What does the code inside index.js file do?
+        It takes the html element with the id 'root' and creates a root element in the react dom to render the html page through react.
+    c. What is this <App /> inside the index.js  file? 
+        <App /> is a component in react which is basically reusable UI elements. 
+        It will contain many ui elements within it.
+    d. Is the App() function returning an HTML tag?
+        The App() function returns a JSX element. JSX element can contain single or multiple html elements all enclosed within single root tag.
+        JSX elements provide a way to write javascript code inside html.
+    e. How is the  App() function invoked/called/executed?
+        React takes the ui elements of the App component and creates a virtual dom tree
+        The elements of this dom are mapped according to the actual dom.
+        The final ui element is then rendered.
+
