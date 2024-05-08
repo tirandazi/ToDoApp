@@ -10,3 +10,18 @@
 .Container {
   text-align: center;
 }
+
+.BtnEmpty {
+  text-align: center;
+  padding-top: 15px;
+}
+
+button {
+  border-radius: 8px;
+  border-width: 1px;
+  padding: 5px;
+}
+
+.todo-item {
+  font-size: large;
+}

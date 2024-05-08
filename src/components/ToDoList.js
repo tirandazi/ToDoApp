@@ -1,13 +1,17 @@
 import ToDoItem from "./ToDoItem";
 
-const ToDoList = ({ toDoList }) => {
+const List = ({ toDoList }) => {
   return (
     <div className="Container">
-      {toDoList.map((todo) => {
-        return <ToDoItem key={todo.id} item={todo.task} />;
-      })}
+      {toDoList.length ? (
+        toDoList.map((todo) => {
+          return <ToDoItem key={todo.id} item={todo.task} />;
+        })
+      ) : (
+        <em>Nothing to do buddy. Sleep!</em>
+      )}
     </div>
   );
 };
 
-export default ToDoList;
+export default List;

@@ -1,5 +1,5 @@
 const ToDoItem = ({ item }) => {
-  return <li>{item}</li>;
+  return <p className="todo-item">{item}</p>;
 };
 
 export default ToDoItem;

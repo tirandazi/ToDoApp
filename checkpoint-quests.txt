@@ -66,3 +66,25 @@ CHECKPOINT 3: LOOPS AND CONDITIONALS IN COMPONENTS
     e. The dev-tools of the browser can also be used to inspect the elements of a page. Can you inspect HTML elements of your page?
         Obviously yes
 
+
+CHECKPOINT 4: MAKING A COMPONENT REACT TO CHANGES
+    a. Click on both the buttons in the output and figure out how they are behaving.
+        Mentos Button adds and renders a new item to the list.
+        Regular Button only adds the new item to the list but doesn't render the ui. 
+        Item added through Regular Button reflects on the next Mentos Button click renders the ui.
+
+    b. Why is clicking on Regular Button not reflecting the change in the output?
+        The countList Array is declared as a hook (useState). Any change in this Array made through the setCountList would re-render the UI elements.
+        But the onClick event of Regular Button does not change the state instead it adds the element directly to the array which won't trigger the change in state.
+        
+    c. Why is clicking Mentos Button reflecting the change?
+        The onClick event instead of adding the item to the array, uses the setValue from useState hook which will re-render ui, when the data changes.
+
+    d. In App.js, what is the useState() function returning? A list, or object, or function?
+        A list which is destructured later on.
+
+    e. What input is given to the useState() function?
+        An array of values that are supposed to be initialized. The initial values will be stored in the countList state variable
+
+    f. Where is this useState() function defined? Was it created by us?
+        It was created by react developers maybe. They would have defined the functioning of this hook.
