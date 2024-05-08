@@ -88,3 +88,20 @@ CHECKPOINT 4: MAKING A COMPONENT REACT TO CHANGES
 
     f. Where is this useState() function defined? Was it created by us?
         It was created by react developers maybe. They would have defined the functioning of this hook.
+
+
+CHECKPOINT 5: PASSING FUNCTIONS TO A COMPONENT
+    a. What attributes are being passed to <Count/> in App.js? Is every attribute passed to <Count/> some kind of data?
+        Props passed to Count component
+            - key prop for unique identification and mapping
+            - initialValue prop to initialize the Count for its container
+            - id and OnIncrementClick
+        No, OnIncrementClick is an event (function) and other props are variable data
+
+    b. In which file is the handleIncrementClick function getting defined and where is it getting called/invoked?
+        handleIncrementClick is defined in the App.js file and getting invoked in the child component <Count />
+
+    c. How is the button inside the Count() component able to change the countList declared inside the App() component without having direct access to setCountList?
+        - The handleIncrementClick function have the definition to change the countList which is in App component.
+        - The reference to this handleIncrementClick function was passed to the Count component.
+        - The onclick event of this button triggers the function through the reference.

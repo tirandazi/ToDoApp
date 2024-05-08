@@ -1,3 +1,7 @@
+* {
+  font-family: sans-serif;
+}
+
 .Application {
   font-family: sans-serif;
   text-align: center;
@@ -24,4 +28,5 @@ button {
 
 .todo-item {
   font-size: large;
+  cursor: pointer;
 }
